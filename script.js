@@ -32,12 +32,14 @@ function random() {
       translateX: function () {
         return gen.next().value;
       },
+      rotate: function () {
+        return anime.random(0, 360);
+      },
       opacity: [0.5, 1],
     })
     .add({
       translateX: 0,
       rotate: 0,
-      scale: 1,
       opacity: 1,
       complete: random,
     });
