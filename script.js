@@ -10,16 +10,19 @@ function* generator() {
 
 const gen = generator();
 
-function random() {
+function addSquares(){
   let elemento = document.querySelector("#contenedor");
-  while (elemento.hasChildNodes()) elemento.removeChild(elemento.firstChild);
-  for (let i = 0; i < 100; i++) {
+  let cont = 0;
+  while(cont < 800) {
     let nodo = document.createElement("div");
     nodo.className = "cuadro";
     nodo.style = "background-color: rgb(" + anime.random(155, 255) + ",0,0)";
     elemento.appendChild(nodo);
+    cont++;
   }
+}
 
+function random() {
   anime
     .timeline({
       targets: ".cuadro",
@@ -44,5 +47,5 @@ function random() {
       complete: random,
     });
 }
-
+addSquares();
 random();
